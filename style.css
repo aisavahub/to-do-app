@@ -1,0 +1,87 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    background: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 10px rgba(0,0,0,0.1);
+}
+h1 {
+    color: blue;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.subtitle{
+    text-align: center;
+    color: gray;
+    margin-bottom: 20px;
+}
+.input-section{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    outline: none;
+}
+button{
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #0077ff;
+    color: white;
+    transition: 0.4s;
+}
+button:hover{
+    transform: translateY(-2px);
+}
+.task-list{
+    list-style: none;
+    margin-bottom: 20px;
+}
+.task-list li{
+    background: #f8f8f8;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+.completed{
+    text-decoration: line-through;
+    color: gray;
+} 
+.empty-state {
+    text-align: center;
+    padding: 20px;
+    color: gray;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+}
+
+@media (max-width:500px){
+
+    .input-section{
+        flex-direction: column;
+    }
+    button{
+        width: 100%;
+    }
+}
