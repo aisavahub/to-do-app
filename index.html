@@ -12,21 +12,12 @@
     
     <div class="container">
        <h1> My To-Do List</h1>
-       <p>Stay Productive and Organized</p>
+       <p class="subtitle">Stay Productive and Organized</p>
        <div class="input-section">
-        <input type="text" placeholder="Input a Task">
-        <button>Add</button>
+        <input type="text" id="taskInput" placeholder="Input a Task">
+        <button id="addBtn">Add</button>
        </div>
-       <ul class="task-list">
-          <li class="completed">Complete Day 24 Coding and Writing</li>
-          <li>Read My Book</li>
-          <li>Complete my task for the day</li>
-          <li>Check my schedule and plan for the next day</li>
-       </ul>
-       <div class="empty-state">
-        <p> No task yet</p>
-        <p>Add a task to get started</p>
-       </div>
+       <ul id="taskList"></ul>
     </div>
     <script src="script.js"></script>
 </body>
