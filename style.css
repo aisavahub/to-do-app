@@ -42,6 +42,11 @@ input {
     border-radius: 10px;
     outline: none;
 }
+input:focus{
+    outline: none;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 0 8px rgba(78, 175, 85, .4);
+}
 button{
     padding: 15px 20px;
     border: none;
@@ -49,10 +54,11 @@ button{
     cursor: pointer;
     background: #0077ff;
     color: white;
-    transition: 0.4s;
+    transition: 0.4s ease-in-out;
 }
 button:hover{
     transform: translateY(-2px);
+    opacity: 0.9;
 }
 .task-list{
     list-style: none;
@@ -67,6 +73,7 @@ button:hover{
 .completed{
     text-decoration: line-through;
     color: gray;
+    opacity: 0.8;
 } 
 .empty-state {
     text-align: center;
@@ -86,7 +93,7 @@ button:hover{
     }
 }
 .delete-btn {
-    background: crimson;
+    background: #dc3545;
     color: white;
     border: none;
     padding: 8px 12px;
@@ -95,6 +102,7 @@ button:hover{
 }
 .delete-btn:hover {
     opacity: 0.9;
+    background: #bb2d3b;
 }
 .task-item{
     display: flex;
@@ -105,6 +113,7 @@ button:hover{
     padding: 12px;
     border-radius: 10px;
     margin-bottom: 10px;
+    transition: 0.4s ease;
 }
 .filters {
     display: flex;
@@ -114,4 +123,10 @@ button:hover{
 #taskCount {
     margin-top: 10px;
     color: gray;
+}
+#emptyMessage{
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+    font-style: italic;
 }

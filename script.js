@@ -46,6 +46,15 @@ function renderTasks() {
 
     taskList.innerHTML = "";
 
+    const emptyMessage =
+    document.getElementById("emptyMessage");
+
+    if (tasks.length === 0) {
+        emptyMessage.style.display =
+        "block";
+    } else {
+        emptyMessage.style.display = "none";
+    }
     let filteredTasks = tasks;
 
     if (currentFilter === "active") {
