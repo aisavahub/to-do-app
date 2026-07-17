@@ -69,39 +69,26 @@ function renderTasks() {
 
         const realIndex = tasks.indexOf(task);
 
-        const li = document.createElement("li");
+        const li = 
+        document.createElement("li");
         li.classList.add("task-item");
+        li.dataset.index = realIndex;
 
-        const taskSpan = document.createElement("span");
+        const taskSpan = 
+        document.createElement("span");
         taskSpan.textContent = task.text;
+        taskSpan.classList.add("task-text");
 
         if (task.completed) {
             taskSpan.classList.add("completed");
         }
 
-        taskSpan.addEventListener("click", () => {
-
-            tasks[realIndex].completed =
-                !tasks[realIndex].completed;
-
-            saveTasks();
-            renderTasks();
-
-        });
+       
 
         const deleteBtn = document.createElement("button");
 
         deleteBtn.textContent = "Delete";
         deleteBtn.classList.add("delete-btn");
-
-        deleteBtn.addEventListener("click", () => {
-
-            tasks.splice(realIndex, 1);
-
-            saveTasks();
-            renderTasks();
-
-        });
 
         li.appendChild(taskSpan);
         li.appendChild(deleteBtn);
@@ -112,6 +99,36 @@ function renderTasks() {
 
     updateTaskCount();
 }
+taskList.addEventListener("click", (e) => {
+   console.log(e.target);
+    const li = e.target.closest("li");
+    if (!li) return;
+
+    const index = Number(li.dataset.index);
+
+    // Delete task
+    if (e.target.classList.contains("delete-btn")) {
+
+        const confirmDelete = confirm("Are you sure you want to delete this task?");
+
+        if (!confirmDelete) return;
+
+        tasks.splice(index, 1);
+
+        saveTasks();
+        renderTasks();
+    }
+
+    // Mark task complete
+    if (e.target.classList.contains("task-text")) {
+
+        tasks[index].completed = !tasks[index].completed;
+
+        saveTasks();
+        renderTasks();
+    }
+
+});
 
 // Button click
 addBtn.addEventListener("click", addTask);

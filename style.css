@@ -74,7 +74,11 @@ button:hover{
     text-decoration: line-through;
     color: gray;
     opacity: 0.8;
+    cursor: pointer;
 } 
+.task-text {
+    cursor: pointer;
+}
 .empty-state {
     text-align: center;
     padding: 20px;
