@@ -9,6 +9,8 @@ const taskCount = document.getElementById("taskCount");
 const allBtn = document.getElementById("allBtn");
 const activeBtn = document.getElementById("activeBtn");
 const completedBtn = document.getElementById("completedBtn");
+const successMessage = document.getElementById("successMessage");
+const clearBtn = document.getElementById("clearBtn")
 
 let currentFilter = "all";
 
@@ -38,6 +40,13 @@ function addTask() {
             taskList,
             taskCount
     );
+
+    successMessage.textContent = "Task Added Successfully";
+
+    successMessage.style.opacity = "1";
+    setTimeout(() => {
+        successMessage.style.opacity ="0";
+    }, 2000);
 
     taskInput.value = "";
 }
@@ -133,3 +142,23 @@ renderTasks(
             taskList,
             taskCount
 );
+
+clearBtn.addEventListener("click", () => {
+
+    if(tasks.length === 0){
+        alert("No tasks to clear.");
+        return
+    }
+    const confirmClear = 
+    confirm("Delete all tasks?");
+
+    if(!confirmClear) return;
+    tasks = [];
+    saveTasks(tasks);
+    renderTasks(
+        tasks,
+            currentFilter,
+            taskList,
+            taskCount
+    )
+})

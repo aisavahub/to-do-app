@@ -1,5 +1,6 @@
 export function updateTaskCount(taskCount, tasks) {
-    taskCount.textContent = `${tasks.length} Tasks`;
+    const completed = tasks.filter(task => task.completed).length;
+    taskCount.textContent = `${tasks.length} Tasks | ${completed} Completed`;
 }
 
 export function renderTasks(
