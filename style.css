@@ -74,7 +74,11 @@ button:hover{
     text-decoration: line-through;
     color: gray;
     opacity: 0.8;
+    cursor: pointer;
 } 
+.task-text {
+    cursor: pointer;
+}
 .empty-state {
     text-align: center;
     padding: 20px;
@@ -129,4 +133,19 @@ button:hover{
     color: #777;
     margin-top: 20px;
     font-style: italic;
+}
+.success-message {
+    color: green;
+    font-size: 14px;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity .3s;
+}
+#clearBtn {
+    display: block;
+    margin: 15px auto;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
